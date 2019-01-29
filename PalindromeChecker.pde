@@ -17,8 +17,10 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  String backwards = reverse(word);
-  if(backwards.equals(word))
+  String backletter = onlyLetters(word.toLowerCase());
+  System.out.println(backletter);
+  String backwards = reverse(backletter);
+  if(backwards.equals(backletter))
     return true;
   else //your code here
     return false;
@@ -33,20 +35,12 @@ public String reverse(String str)
     return sNew;
 }
 
-public String noCapitals(String lowercase)
-{
-  String lowercase = new String();
-  return lowercase.toLowerCase();
+public String onlyLetters(String sString){
+  String letters = new String();
+    for(int i = 0; i <= sString.length()-1; i++)
+      if(Character.isLetter(sString.charAt(i)))
+        letters = letters + sString.substring(i,i+1);
+    return letters;
 }
 
-public String noSpace(String oneword)
-{
-  String noSpace = new String();
-  int letter = 0;
-    for(int i = letter; i <= oneword.length()-1, i++)
-      if(oneword.charAt(i) != ' ')
-        noSpace = noSpace + oneword.charAt(i);
-
-      return noSpace;
-}
 
